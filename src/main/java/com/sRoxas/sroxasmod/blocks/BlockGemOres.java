@@ -12,66 +12,35 @@ import java.util.Random;
 public class BlockGemOres extends Block
 {
     private String name;
-    protected BlockGemOres(String type) {
+    private Item dropped;
+
+    protected BlockGemOres(String type, Item dropped)
+    {
         super(Material.rock);
         this.setCreativeTab(sRoxasmodTabs.sRoxasmodBlockTab);
         this.setStepSound(soundTypeStone);
         this.setHardness(2.5F);
         this.setResistance(10.0F);
         this.textureName = Reference.MOD_ID + ":" + type;
-        this.setBlockName(type);
         this.setHarvestLevel("pickaxe", 2);
         this.name = type;
+        this.dropped = dropped;
+        this.setBlockName(type);
     }
-    
+
     public int quantityDropped(Random random)
     {
-        if (this.name == "purpleGemOre"){
-            return random.nextInt(3 - 1 + 1) + 1;
-        }
-        if (this.name == "redGemOre")
+        if (this.name.equals("purpleGemOre") || this.name.equals("redGemOre") || this.name.equals("blueGemOre") || this.name.equals("greenGemOre") || this.name.equals("pinkGemOre") || this.name.equals("orageGemOre"))
         {
             return random.nextInt(3 - 1 + 1) + 1;
-        }
-        if (this.name == "blueGemOre")
+        } else
         {
-            return random.nextInt(3 - 1 + 1) + 1;
+            return 0;
         }
-        if (this.name == "greenGemOre")
-        {
-            return random.nextInt(3 - 1 + 1) + 1;
-        }
-        if (this.name == "pinkGemOre")
-        {
-            return random.nextInt(3 - 1 + 1) + 1;
-        }
-        if (this.name == "orangeGemOre")
-        {
-            return random.nextInt(3 - 1 + 1) + 1;
-        }
-        return 0;
     }
 
     public Item getItemDropped(int i, Random random, int j)
     {
-        if (this.name == "purpleGemOre"){
-            return ModItems.purpleGem;
-        } else if (this.name == "redGemOre")
-        {
-            return ModItems.redGem;
-        } else if (this.name == "blueGemOre")
-        {
-            return ModItems.blueGem;
-        } else if (this.name == "greenGemOre")
-        {
-            return ModItems.greenGem;
-        } else if (this.name == "pinkGemOre")
-        {
-            return ModItems.pinkGem;
-        } else if (this.name == "orangeGemOre")
-        {
-            return ModItems.orangeGem;
-        }
-        return null;
+        return this.dropped;
     }
 }

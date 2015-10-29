@@ -1,6 +1,7 @@
 package com.sRoxas.sroxasmod.blocks;
 
 import com.sRoxas.sroxasmod.reference.Reference;
+import com.sRoxas.sroxasmod.utility.IconHelper;
 import com.sRoxas.sroxasmod.utility.LogHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -30,8 +31,7 @@ public class BlockLamps extends Block {
     public void registerBlockIcons(IIconRegister iconRegister){
         texture = new IIcon[16];
         for(int i = 0; i < 16; i++) {
-            texture[i] = iconRegister.registerIcon(Reference.MOD_PREFIX + "BlockLamp" + i);
-            LogHelper.info(Reference.MOD_PREFIX + "BlockLamp" + i);
+            texture[i] = IconHelper.forBlock(iconRegister, this, i);
         }
     }
 

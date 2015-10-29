@@ -1,29 +1,33 @@
 package com.sRoxas.sroxasmod.blocks;
 
 import com.sRoxas.sroxasmod.creativetab.sRoxasmodTabs;
-import com.sRoxas.sroxasmod.reference.Reference;
+import com.sRoxas.sroxasmod.utility.IconHelper;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IIconRegister;
 
 public class BlockMod extends Block
 {
-    public BlockMod(Material material, String name, float hardness, float resistance, String tool, int harvestLevel)
+    public BlockMod(Material material)
     {
         super(material);
-        this.setCreativeTab(sRoxasmodTabs.sRoxasmodBlockTab);
-        this.setBlockName(name);
-        this.setHardness(hardness);
-        this.setResistance(resistance);
-        this.setHarvestLevel(tool, harvestLevel);
-        this.textureName = Reference.MOD_ID + ":" + name;
+        setCreativeTab(sRoxasmodTabs.sRoxasmodBlockTab);
     }
-    public BlockMod(Material material, String name, float hardness, float resistance)
+
+    @Override
+    public Block setBlockName(String bn)
     {
-        super(material);
-        this.setCreativeTab(sRoxasmodTabs.sRoxasmodBlockTab);
-        this.setBlockName(name);
-        this.setHardness(hardness);
-        this.setResistance(resistance);
-        this.textureName = Reference.MOD_ID + ":" + name;
+        GameRegistry.registerBlock(this, bn);
+        return super.setBlockName(bn);
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void registerBlockIcons(IIconRegister ir)
+    {
+        blockIcon = IconHelper.forBlock(ir, this);
     }
 }
