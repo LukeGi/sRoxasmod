@@ -16,16 +16,16 @@
                 #logo h1 span { color:#A7D3FF;}
 
                 /* Header */
-                #header { background:#E5FFFF; }
+                #header { background:#E5FFFF; border-bottom: 1px solid; display:block;}
                 #header-inner { margin:0 auto; padding:0; width:970px;}
 
                 /* Feature */
-                .feature { background:royalblue;padding:18px;}
-                .feature-inner { margin:auto;width:970px; }
-                .feature-inner h1 {color:skyblue;font-size:72px;}
-                .feature-inner h1 span {color:#B6E3FF;}
-                .feature-inner h2 {color:lightskyblue;font-size:24px;}
-                .feature-inner a {color:lightcyan;font-size: 28px;text-decoration:none;}
+                #feature { background:royalblue; padding:18px; border-bottom: 1px solid; display:block;}
+                #feature-inner { margin:auto;width:970px; }
+                #feature-inner h1 {color:skyblue;font-size:72px;}
+                #feature-inner h1 span {color:#B6E3FF;}
+                #feature-inner h2 {color:lightskyblue;font-size:24px;}
+                #feature-inner a {color:lightcyan;font-size: 28px;text-decoration:none;}
 
                 /* Menu */
                 #top-nav { margin:0 auto; padding:0px 0 0; height:37px; float:right;}
@@ -35,6 +35,7 @@
                 #top-nav ul li.active a, #top-nav ul li a:hover { color:#BEDEFF;}
 
                 /* Content */
+                #content {border-bottom: 1px solid; display:block;}
                 #content-inner { margin:0 auto; padding:10px 0; width:970px; background:aliceblue;}
                 #content #contentbar { margin:0; padding:0; float:right; width:760px;}
                 #content #contentbar .article { margin:0 0 24px; padding:0 20px 0 15px; }
@@ -48,7 +49,8 @@
                 #content #sidebar .widget ul li a:hover { color:#C6D4FF; font-weight:bold; text-decoration:none;}
 
                 /* Footerblurb */
-                #footerblurb { background:lightgrey;color:#555555;}
+                #footerblurb { 
+                    background:linear-gradient(#EEEDDD, #DDDEEE); color:#555555; border-bottom: 1px solid; display:block;}
                 #footerblurb h2 { color: black }
                 #footerblurb a { color: black }
                 #footerblurb-inner { margin:0 auto; width:922px; padding:24px;}
@@ -81,8 +83,8 @@
                         <div class="clr"></div>
                     </div>
                 </header>
-                <div class="feature">
-                    <div class="feature-inner">
+                <div id="feature">
+                    <div id="feature-inner">
                         <h1><span>sRoxasmod</span> - Home</h1>
                         <h2>A Minecraft Mod, created by <a href="http://www.github.com/bluemonster122">BlueMonster122</a>. Created while learning java, to help learn java.</h2>
                     </div>
@@ -95,6 +97,7 @@
                         <main id="contentbar">
                             <div class="article">
                                 <p>Placeholder for main body</p>
+                                <iframe src="http://widget.mcf.li/mc-mods/minecraft/227165-sroxasmod" width="100%" style="border: none;"></iframe>
                             </div>
                         </main>
 
