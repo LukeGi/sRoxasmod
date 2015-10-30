@@ -1,18 +1,18 @@
 .jumbotron{
-    background-image: url(/res/index_jumbo.jpg);
+    background-image: repeating-radial-gradient(aliceblue, lightgrey);
     height: 590px;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .jumbotron .container {
-    top: 430px;
+    top: 225px;
     position: relative;
-    text-align: right;
+    text-align: center;
 }
 
 .jumbotron h1 {
-    color: #fff;
+    color: #000;
     font-size: 48px;
     font-family: 'Shift', sans-serif;
     font-weight: bold;
@@ -20,7 +20,11 @@
 
 .jumbotron p {
     font-size: 20px;
-    color: #fff;
+    color: #000;
+}
+
+.jumbotron a {
+    color: #A200B3;
 }
 
 .main {
