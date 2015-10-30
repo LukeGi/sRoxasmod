@@ -1,6 +1,6 @@
 .jumbotron{
-    background-image: url('/res/index_jumbo.png');
-    height: 565px;
+    background-image: url(/res/index_jumbo.jpg);
+    height: 590px;
     background-repeat: no-repeat;
     background-size: cover;
 }
